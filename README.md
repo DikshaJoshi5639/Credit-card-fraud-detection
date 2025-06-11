@@ -1,63 +1,51 @@
-Credit Card Fraud Detection
-📌 Project Overview
-This project aims to build a machine learning model to detect fraudulent credit card transactions. The dataset contains anonymized features obtained through PCA transformation, along with the transaction time, amount, and a binary class indicating whether a transaction is fraudulent.
+# 💳 Credit Card Fraud Detection
 
-The data represents transactions made by European cardholders in September 2013, capturing two days' worth of activity. It is highly imbalanced, with fraudulent transactions constituting only 0.172% of the dataset.
+## 📌 Project Overview
 
-📊 Dataset Description
-Total Transactions: 284,807
+This project aims to develop a **machine learning model** capable of detecting **fraudulent credit card transactions**. 
 
-Fraudulent Transactions: 492
+The dataset contains transactions made by European cardholders over **two days in September 2013**, comprising **284,807 transactions**, of which **492 are fraudulent** (only **0.172%**).
 
-Non-Fraudulent Transactions: 284,315
+---
 
-Imbalance Ratio: ~0.172%
+## 📊 Dataset Description
 
-Features:
-Time: Seconds elapsed between the transaction and the first transaction in the dataset
+| Feature     | Description                                                                 |
+|-------------|-----------------------------------------------------------------------------|
+| `Time`      | Seconds elapsed between the current and first transaction                  |
+| `Amount`    | Transaction amount                                                          |
+| `V1`–`V28`  | Principal components obtained via **PCA** transformation                    |
+| `Class`     | **Target variable** – `1` for fraud, `0` for non-fraud                      |
 
-Amount: Transaction amount
+> ⚠️ The dataset is **highly imbalanced**. Traditional accuracy metrics are misleading.
 
-V1 to V28: Principal Components obtained via PCA
+---
 
-Class: Target variable (1 = Fraud, 0 = Not Fraud)
+## 🎯 Objective
 
-ℹ️ Due to confidentiality, original features and more background details are not provided.
+- Detect fraudulent transactions with **high precision and recall**
+- **Handle class imbalance** using resampling or cost-sensitive techniques
+- **Evaluate using AUPRC** (Area Under the Precision-Recall Curve)
 
-🎯 Objective
-Build a classification model to accurately detect fraudulent transactions.
+---
 
-Address the class imbalance problem.
+## 🛠️ Tech Stack
 
-Evaluate using Area Under the Precision-Recall Curve (AUPRC) rather than traditional accuracy metrics.
+- **Python**
+- **Pandas**, **NumPy**
+- **Scikit-learn**
+- **Matplotlib**, **Seaborn**
+- **Jupyter Notebook**
 
-📈 Evaluation Metrics
-Because of the extreme class imbalance, we use:
+---
 
-AUPRC (Area Under Precision-Recall Curve)
+## 🧪 Evaluation Metrics
 
-F1-Score
+Given the imbalance, we use:
+- ✅ **AUPRC**
+- ✅ **F1-Score**
+- ✅ **Precision & Recall**
+- ❌ **Accuracy** (not suitable)
 
-Precision and Recall
+---
 
-Confusion Matrix (only for reference, not primary metric)
-
-⚙️ Technologies Used
-Python
-
-Pandas, NumPy
-
-Scikit-learn
-
-Matplotlib, Seaborn
-
-Jupyter Notebook
-
-🧠 Approaches to Consider
-Resampling Techniques: SMOTE, Undersampling
-
-Anomaly Detection Models
-
-Cost-sensitive learning
-
-Ensemble methods (Random Forest, XGBoost)
